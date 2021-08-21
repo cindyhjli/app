@@ -11,7 +11,6 @@ passwordlisturl = ["ig.com"]
 passwordlistusername = ["danielwangg", "dan"]
 passwordlistcode = ["12345"]
 
-
 class MainView(arcade.View):
     def __init__(self):
         super().__init__()
@@ -19,7 +18,7 @@ class MainView(arcade.View):
         self.ui_manager = UIManager()
 
     def on_show(self):
-        arcade.set_background_color(arcade.color.LIGHT_BLUE)
+        arcade.set_background_color(arcade.color.WHITE)
         self.on_draw()
 
     def on_hide_view(self):
@@ -51,26 +50,21 @@ class MainView(arcade.View):
             arcade.draw_text("your first password", width / 2, 465, arcade.color.WHITE, 24,
                              anchor_x="center", font_name='Verdana')
         else:
+            self.remove_list: arcade.SpriteList = arcade.SpriteList()
             for x in range(len(passwordlistname)):
                 arcade.draw_rectangle_filled(width / 2, 575 - (80*x), 350, 70, arcade.color.BLACK)
-                self.remove_list: arcade.SpriteList = arcade.SpriteList()
-                remove = Icon("Images/3.png", 0.1)
-                remove.position = 200, 575 - (80*x)
+                remove = Icon("Images/3.png", 0.04)
+                remove.position = 340, 575 - (80*x)
                 self.remove_list.append(remove)
-                arcade.draw_text(passwordlistname[x], 50, 572 - (80*x), arcade.color.BLACK, 18, font_name='Verdana')
-                arcade.draw_text("Username: " + passwordlistusername[x], 50, 550 - (80 * x), arcade.color.BLACK, 12, font_name='Verdana')
-                x = MyFlatButton(" ", center_x=160, center_y=575-(80*x), width=270, height = 70)
-                self.ui_manager.add_ui_element(x)
+                button = MyFlatButton(passwordlistname[x], center_x=165, center_y=585-(80*x), width=280, height=35)
+                self.ui_manager.add_ui_element(button)
             self.remove_list.draw()
 
-
-class PasswordView(arcade.View):
-    def on_show(self):
-        arcade.set_background_color(arcade.color.BRIGHT_NAVY_BLUE)
-
-    def on_draw(self):
-        arcade.start_render()
-        arcade.draw_text("PLEASE", 200, 200, arcade.color.BRIGHT_NAVY_BLUE, 30)
+            for x in range(len(passwordlistname)):
+                arcade.draw_text("Username: " + passwordlistusername[x], 165, 545 - (80 * x), arcade.color.WHITE, 12,
+                                 font_name='Verdana', anchor_x="center")
+            arcade.draw_rectangle_filled(width/2, 575 - (80*(len(passwordlistname))), 350, 70, arcade.color.BLACK)
+            arcade.draw_text("Recently Deleted", width / 2, 560 - (80*(len(passwordlistname))), arcade.color.RADICAL_RED, 20, anchor_x="center")
 
 
 class Icon(arcade.Sprite):
@@ -81,8 +75,6 @@ class Icon(arcade.Sprite):
 class MyFlatButton(arcade.gui.UIFlatButton):
     def on_click(self):
         print("Clicked")
-        password_view = PasswordView()
-        password_view.on_show()
 
 
 def main():
