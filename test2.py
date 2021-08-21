@@ -19,7 +19,11 @@ class MainView(arcade.View):
         self.ui_manager = UIManager()
 
     def on_show(self):
-        arcade.set_background_color(arcade.color.BLACK)
+        arcade.set_background_color(arcade.color.WHITE)
+        self.on_draw()
+
+    def on_hide_view(self):
+        self.ui_manager.unregister_handlers()
 
     def on_draw(self):
         arcade.start_render()
@@ -49,11 +53,11 @@ class MainView(arcade.View):
         else:
             for x in range(len(passwordlistname)):
                 arcade.draw_rectangle_filled(width / 2, 575 - (80*x), 350, 70, arcade.color.LIGHT_GRAY)
-                arcade.draw_text(passwordlistname[x], 50, 572 - (80*x), arcade.color.BLACK, 18, font_name='Verdana')
+                #arcade.draw_text(passwordlistname[x], 50, 572 - (80*x), arcade.color.BLACK, 18, font_name='Verdana')
                 arcade.draw_text("Username: " + passwordlistusername[x], 50, 550 - (80 * x), arcade.color.BLACK, 12, font_name='Verdana')
                 self.ui_manager.purge_ui_elements()
-                button = MyFlatButton("Button", 0, 0, width=400, height=700)
-                self.ui_manager.add_ui_element(button)
+                x = MyFlatButton(passwordlistname[x], center_x=150, center_y=550-(80*x), width=290)
+                self.ui_manager.add_ui_element(x)
 
 
 class PasswordView(arcade.View):
@@ -72,6 +76,7 @@ class Icon(arcade.Sprite):
 
 class MyFlatButton(arcade.gui.UIFlatButton):
     def on_click(self):
+        print("Clicked")
         password_view = PasswordView()
         password_view.on_show()
 
