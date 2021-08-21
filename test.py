@@ -1,6 +1,5 @@
 import arcade
-import arcade.gui
-from arcade.gui import UIManager
+
 
 width = 400
 height = 700
@@ -20,9 +19,6 @@ class Main(arcade.Window):
         self.sprite_list = arcade.SpriteList()
 
     def setup(self):
-        pass
-
-    def on_draw(self):
         arcade.start_render()
         y = 635
         arcade.draw_rectangle_filled(width / 2, 0, 400, 150, arcade.color.LIGHT_GRAY)
@@ -54,16 +50,12 @@ class Main(arcade.Window):
                 arcade.draw_text("Username:" + passwordlistusername[x], 50, 550 - (80 * x), arcade.color.BLACK, 12, font_name='Verdana')
 
     def on_mouse_press(self, x, y, button, key_modifiers):
-        link = arcade.get_text_ at_point((x, y,))
+        click = arcade.get_sprites_at_point((x, y), self.pile_mat_list)
 
 
 class Icon(arcade.Sprite):
     def __init__(self, filename, scale):
         super().__init__(filename=filename, scale=scale)
-
-class MyFlatButton(arcade.gui.UIFlatButton):
-    def on_click(self):
-
 
 
 def main():
