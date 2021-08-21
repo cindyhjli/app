@@ -5,6 +5,11 @@ width = 400
 height = 700
 title = "passwordapp"
 
+passwordlistname = ["Instagram", "Snapchat"]
+passwordlisturl = ["ig.com"]
+passwordlistusername = ["danielwangg"]
+passwordlistcode = ["12345"]
+
 
 class Main(arcade.Window):
 
@@ -32,6 +37,16 @@ class Main(arcade.Window):
 
         self.pile_mat_list.draw()
 
+        if len(passwordlistname) == 0:
+            arcade.draw_rectangle_filled(width / 2, 500, 340, 200, arcade.color.LIGHT_GRAY)
+            arcade.draw_text("Click the '+' to add", width / 2, 510, arcade.color.WHITE, 24,
+                             anchor_x="center", font_name='Verdana')
+            arcade.draw_text("your first password", width / 2, 465, arcade.color.WHITE, 24,
+                             anchor_x="center", font_name='Verdana')
+        else:
+            for x in range(len(passwordlistname)):
+                arcade.draw_rectangle_filled(width / 2, 550 - (60*x), 350, 50, arcade.color.LIGHT_GRAY)
+                arcade.draw_text(passwordlistname[x], 60, 538 - (60*x), arcade.color.BLACK, 18, font_name='Verdana')
 
 class Icon(arcade.Sprite):
     def __init__(self, filename, scale):
