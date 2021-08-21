@@ -1,7 +1,6 @@
 import arcade
 import arcade.gui
 from arcade.gui import UIManager
-from arcade.gui.ui_style import UIStyle
 
 width = 400
 height = 700
@@ -55,7 +54,7 @@ class MainView(arcade.View):
             for x in range(len(passwordlistname)):
                 arcade.draw_rectangle_filled(width / 2, 575 - (80*x), 350, 70, arcade.color.BLACK)
                 self.remove_list: arcade.SpriteList = arcade.SpriteList()
-                remove = Icon("Images/Untitled design.png", 0.1)
+                remove = Icon("Images/3.png", 0.1)
                 remove.position = 200, 575 - (80*x)
                 self.remove_list.append(remove)
                 arcade.draw_text(passwordlistname[x], 50, 572 - (80*x), arcade.color.BLACK, 18, font_name='Verdana')
@@ -63,7 +62,6 @@ class MainView(arcade.View):
                 x = MyFlatButton(" ", center_x=160, center_y=575-(80*x), width=270, height = 70)
                 self.ui_manager.add_ui_element(x)
             self.remove_list.draw()
-
 
 
 class PasswordView(arcade.View):
