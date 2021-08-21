@@ -84,6 +84,7 @@ class MyFlatButton(arcade.gui.UIFlatButton):
         password_view = PasswordView()
         password_view.on_show()
 
+
 def main():
     window = arcade.Window(width, height, title)
     main_view = MainView()
