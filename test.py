@@ -53,10 +53,6 @@ class Main(arcade.Window):
                 arcade.draw_text(passwordlistname[x], 50, 572 - (80*x), arcade.color.BLACK, 18, font_name='Verdana')
                 arcade.draw_text("Username:" + passwordlistusername[x], 50, 550 - (80 * x), arcade.color.BLACK, 12, font_name='Verdana')
 
-    def on_mouse_press(self, x, y, button, key_modifiers):
-        link = arcade.get_text_ at_point((x, y,))
-
-
 class Icon(arcade.Sprite):
     def __init__(self, filename, scale):
         super().__init__(filename=filename, scale=scale)
