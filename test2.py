@@ -1,6 +1,7 @@
 import arcade
 import arcade.gui
 from arcade.gui import UIManager
+from arcade.gui.ui_style import UIStyle
 
 width = 400
 height = 700
@@ -19,7 +20,7 @@ class MainView(arcade.View):
         self.ui_manager = UIManager()
 
     def on_show(self):
-        arcade.set_background_color(arcade.color.WHITE)
+        arcade.set_background_color(arcade.color.LIGHT_BLUE)
         self.on_draw()
 
     def on_hide_view(self):
@@ -45,19 +46,24 @@ class MainView(arcade.View):
         self.pile_mat_list.draw()
 
         if len(passwordlistname) == 0:
-            arcade.draw_rectangle_filled(width / 2, 500, 340, 200, arcade.color.LIGHT_GRAY)
+            arcade.draw_rectangle_filled(width / 2, 500, 340, 200, arcade.color.BLACK)
             arcade.draw_text("Click the '+' to add", width / 2, 510, arcade.color.WHITE, 24,
                              anchor_x="center", font_name='Verdana')
             arcade.draw_text("your first password", width / 2, 465, arcade.color.WHITE, 24,
                              anchor_x="center", font_name='Verdana')
         else:
             for x in range(len(passwordlistname)):
-                arcade.draw_rectangle_filled(width / 2, 575 - (80*x), 350, 70, arcade.color.LIGHT_GRAY)
-                #arcade.draw_text(passwordlistname[x], 50, 572 - (80*x), arcade.color.BLACK, 18, font_name='Verdana')
+                arcade.draw_rectangle_filled(width / 2, 575 - (80*x), 350, 70, arcade.color.BLACK)
+                self.remove_list: arcade.SpriteList = arcade.SpriteList()
+                remove = Icon("Images/Untitled design.png", 0.1)
+                remove.position = 200, 575 - (80*x)
+                self.remove_list.append(remove)
+                arcade.draw_text(passwordlistname[x], 50, 572 - (80*x), arcade.color.BLACK, 18, font_name='Verdana')
                 arcade.draw_text("Username: " + passwordlistusername[x], 50, 550 - (80 * x), arcade.color.BLACK, 12, font_name='Verdana')
-                self.ui_manager.purge_ui_elements()
-                x = MyFlatButton(passwordlistname[x], center_x=150, center_y=550-(80*x), width=290)
+                x = MyFlatButton(" ", center_x=160, center_y=575-(80*x), width=270, height = 70)
                 self.ui_manager.add_ui_element(x)
+            self.remove_list.draw()
+
 
 
 class PasswordView(arcade.View):
