@@ -1,4 +1,5 @@
 import arcade
+import globalValues
 
 width = 400
 height = 700
@@ -10,6 +11,8 @@ class Main(arcade.Window):
     def __init__(self):
         super().__init__(width, height, title)
         arcade.set_background_color(arcade.color.WHITE)
+        global_values = globalValues.GlobalValues()
+        print(global_values.password)
 
     def setup(self):
         arcade.start_render()
