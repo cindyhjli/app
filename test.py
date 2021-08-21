@@ -57,8 +57,6 @@ class Icon(arcade.Sprite):
     def __init__(self, filename, scale):
         super().__init__(filename=filename, scale=scale)
 
-class MyFlatButton(arcade.gui.UIFlatButton):
-    def on_click(self):
 
 
 
