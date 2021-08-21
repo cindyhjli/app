@@ -9,12 +9,25 @@ title = "Create a new record"
 
 
 class Button(arcade.gui.UIFlatButton):
+    def __init__(self, center_x, center_y, str, ui_manager):
+        super().__init__(center_x=center_x, center_y=center_y, text=str)
+        self.ui_manager = ui_manager
+
     def on_click(self):
-        pass
+        self.ui_manager.purge_ui_elements()
+
+
 
 class GeneratePasswordButton(arcade.gui.UIFlatButton):
+    def __init__(self, str, center_x, center_y, ui_manager):
+        super().__init__(str, center_x=center_x, center_y=center_y)
+        self.ui_manager = ui_manager
+
     def on_click(self):
-        pass
+        input_box = arcade.gui.UIInputBox(center_x=260, center_y=320, width=260)
+        input_box.text = 's3nHyU%ank#Kl'
+        input_box.cursor_index = len(input_box.text)
+        self.ui_manager.add_ui_element(input_box)
 
 
 class EntryScreen(arcade.View):
@@ -30,6 +43,7 @@ class EntryScreen(arcade.View):
         arcade.draw_text("URL:", start_x=20, start_y=500, color=arcade.color.WHITE, font_size=20)
         arcade.draw_text("Username:", start_x=20, start_y=400, color=arcade.color.WHITE, font_size=20)
         arcade.draw_text("Password:", start_x=20, start_y=300, color=arcade.color.WHITE, font_size=20)
+        arcade.draw_text("Entry added!:", start_x=125, start_y=180, color=arcade.color.WHITE, font_size=20)
 
     def on_show_view(self):
         self.setup()
@@ -41,7 +55,7 @@ class EntryScreen(arcade.View):
         global_values = globalValues.GlobalValues()
         self.ui_manager.purge_ui_elements()
         # add button
-        button = Button("Create entry", center_x=200, center_y=200, width=250)
+        button = Button(str="Create entry", center_x=200, center_y=200, ui_manager=self.ui_manager)
         self.ui_manager.add_ui_element(button)
         # input box nickname
         input_box = arcade.gui.UIInputBox(center_x=260, center_y=620, width=255)
@@ -64,7 +78,8 @@ class EntryScreen(arcade.View):
         input_box.cursor_index = len(input_box.text)
         self.ui_manager.add_ui_element(input_box)
         # generate password
-        generate_password = GeneratePasswordButton("Generate password", center_x=260, center_y=280)
+        generate_password = GeneratePasswordButton(str="Generate password", center_x=260, center_y=280,
+                                                   ui_manager=self.ui_manager)
         self.ui_manager.add_ui_element(generate_password)
 
 
