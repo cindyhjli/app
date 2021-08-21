@@ -27,14 +27,47 @@ class MainView(arcade.View):
         arcade.draw_text("deleted after 30 days", width / 2, 535, arcade.color.WHITE, 16,
                          anchor_x="center", font_name='Verdana')
 
-        arcade.draw_rectangle_filled(width / 2, 450, 350, 70, arcade.color.BLACK)
-        arcade.draw_text("Instagram", 50, 445, arcade.color.WHITE, 22)
-        arcade.draw_text("Username: cd_tech", 50, 425, arcade.color.WHITE, 12)
+        arcade.draw_text("30 Days Left", 35, 465, arcade.color.BLACK, 22, font_name='Verdana Bold')
+
+        arcade.draw_rectangle_filled(width / 2, 420, 350, 70, arcade.color.BLACK)
+        arcade.draw_text("Instagram", 50, 415, arcade.color.WHITE, 22)
+        arcade.draw_text("Username: cd_tech", 50, 395, arcade.color.WHITE, 12)
 
         self.icon_list: arcade.SpriteList = arcade.SpriteList()
         remove = Icon("Images/3.png", 0.04)
-        remove.position = 340, 575
+        remove.position = 340, 420
         self.icon_list.append(remove)
+        recover = Icon("Images/4.png", 0.04)
+        recover.position = 270, 420
+        self.icon_list.append(recover)
+        self.icon_list.draw()
+
+        arcade.draw_text("19 Days Left", 35, 340, arcade.color.BLACK, 22, font_name='Verdana Bold')
+
+        arcade.draw_rectangle_filled(width / 2, 295, 350, 70, arcade.color.BLACK)
+        arcade.draw_text("Instagram", 50, 290, arcade.color.WHITE, 22)
+        arcade.draw_text("Username: cd_tech", 50, 270, arcade.color.WHITE, 12)
+
+        self.icon_list: arcade.SpriteList = arcade.SpriteList()
+        remove = Icon("Images/3.png", 0.04)
+        remove.position = 340, 295
+        self.icon_list.append(remove)
+        recover = Icon("Images/4.png", 0.04)
+        recover.position = 270, 295
+        self.icon_list.append(recover)
+        self.icon_list.draw()
+
+        arcade.draw_rectangle_filled(width / 2, 215, 350, 70, arcade.color.BLACK)
+        arcade.draw_text("Instagram", 50, 210, arcade.color.WHITE, 22)
+        arcade.draw_text("Username: cd_tech", 50, 190, arcade.color.WHITE, 12)
+
+        self.icon_list: arcade.SpriteList = arcade.SpriteList()
+        remove = Icon("Images/3.png", 0.04)
+        remove.position = 340, 215
+        self.icon_list.append(remove)
+        recover = Icon("Images/4.png", 0.04)
+        recover.position = 270, 215
+        self.icon_list.append(recover)
         self.icon_list.draw()
 
 class Icon(arcade.Sprite):
