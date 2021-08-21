@@ -7,7 +7,7 @@ title = "passwordapp"
 
 passwordlistname = ["Instagram", "Snapchat"]
 passwordlisturl = ["ig.com"]
-passwordlistusername = ["danielwangg"]
+passwordlistusername = ["danielwangg", "dan"]
 passwordlistcode = ["12345"]
 
 
@@ -45,8 +45,13 @@ class Main(arcade.Window):
                              anchor_x="center", font_name='Verdana')
         else:
             for x in range(len(passwordlistname)):
-                arcade.draw_rectangle_filled(width / 2, 550 - (60*x), 350, 50, arcade.color.LIGHT_GRAY)
-                arcade.draw_text(passwordlistname[x], 60, 538 - (60*x), arcade.color.BLACK, 18, font_name='Verdana')
+                arcade.draw_rectangle_filled(width / 2, 575 - (80*x), 350, 70, arcade.color.LIGHT_GRAY)
+                arcade.draw_text(passwordlistname[x], 50, 572 - (80*x), arcade.color.BLACK, 18, font_name='Verdana')
+                arcade.draw_text("Username:" + passwordlistusername[x], 50, 550 - (80 * x), arcade.color.BLACK, 12, font_name='Verdana')
+
+    def on_mouse_press(self, x, y, button, key_modifiers):
+        click = arcade.get_sprites_at_point((x, y), self.pile_mat_list)
+
 
 class Icon(arcade.Sprite):
     def __init__(self, filename, scale):
