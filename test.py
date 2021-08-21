@@ -20,6 +20,9 @@ class Main(arcade.Window):
         self.sprite_list = arcade.SpriteList()
 
     def setup(self):
+        pass
+
+    def on_draw(self):
         arcade.start_render()
         y = 635
         arcade.draw_rectangle_filled(width / 2, 0, 400, 150, arcade.color.LIGHT_GRAY)
