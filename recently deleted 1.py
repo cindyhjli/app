@@ -45,7 +45,7 @@ class MainView(arcade.View):
 
         arcade.draw_rectangle_filled(width / 2, 295, 350, 70, arcade.color.BLACK)
         arcade.draw_text("Instagram", 50, 290, arcade.color.WHITE, 22)
-        arcade.draw_text("Username: cd_tech", 50, 270, arcade.color.WHITE, 12)
+        arcade.draw_text("Username: cd_technologies", 50, 270, arcade.color.WHITE, 12)
 
         self.icon_list: arcade.SpriteList = arcade.SpriteList()
         remove = Icon("Images/3.png", 0.04)
@@ -57,8 +57,8 @@ class MainView(arcade.View):
         self.icon_list.draw()
 
         arcade.draw_rectangle_filled(width / 2, 215, 350, 70, arcade.color.BLACK)
-        arcade.draw_text("Instagram", 50, 210, arcade.color.WHITE, 22)
-        arcade.draw_text("Username: cd_tech", 50, 190, arcade.color.WHITE, 12)
+        arcade.draw_text("Facebook", 50, 210, arcade.color.WHITE, 22)
+        arcade.draw_text("Username: cd_tech_", 50, 190, arcade.color.WHITE, 12)
 
         self.icon_list: arcade.SpriteList = arcade.SpriteList()
         remove = Icon("Images/3.png", 0.04)

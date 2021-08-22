@@ -6,8 +6,8 @@ width = 400
 height = 700
 title = "Password Manager"
 
-passwordlistname = ["Instagram", "Amazon", "Presto", "Instagram", "Jstor", "Tim Hortons"]
-passwordlistusername = ["cd_technologies", "cdtech@gmail.com", "cd_travels", "@cd_tech", "cdtech@gmail.com", "cdtech@gmail.com"]
+passwordlistname = ["Amazon", "Presto", "Instagram", "Jstor", "Tim Hortons"]
+passwordlistusername = ["cdtech@gmail.com", "cd_travels", "@cd_tech", "cdtech@gmail.com", "cdtech@gmail.com"]
 
 class MainView(arcade.View):
     def __init__(self):
