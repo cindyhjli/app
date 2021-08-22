@@ -2,7 +2,7 @@ import arcade
 
 width = 400
 height = 700
-title = "passwordapp"
+title = "Password Manager"
 
 class LoadingView(arcade.View):
     def on_show(self):

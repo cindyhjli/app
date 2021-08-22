@@ -4,7 +4,7 @@ from arcade.gui import UIManager
 
 width = 400
 height = 700
-title = "passwordapp"
+title = "Password Manager"
 
 passwordlistname = ["Instagram", "Snapchat"]
 passwordlisturl = ["ig.com"]

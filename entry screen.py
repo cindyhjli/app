@@ -5,7 +5,7 @@ from arcade.gui import UIManager
 
 width = 400
 height = 700
-title = "Create a new record"
+title = "Password Manager"
 
 
 class Button(arcade.gui.UIFlatButton):

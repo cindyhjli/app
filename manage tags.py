@@ -3,7 +3,7 @@ import arcade.gui
 
 width = 400
 height = 700
-title = "passwordapp"
+title = "Password Manager"
 
 
 class MainView(arcade.View):
