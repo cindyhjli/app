@@ -25,7 +25,6 @@ class MainView(arcade.View):
     def on_draw(self):
         arcade.start_render()
         y = 635
-        #arcade.draw_rectangle_filled(width / 2, 0, 400, 150, arcade.color.LIGHT_GRAY)
         arcade.draw_text("PASSWORDS", width / 2, y, arcade.color.BRIGHT_NAVY_BLUE, 28,
                          anchor_x="center", font_name='Verdana Bold')
 
