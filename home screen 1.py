@@ -67,7 +67,6 @@ class MainView(arcade.View):
             arcade.draw_text("your first password", width / 2, 465, arcade.color.WHITE, 24,
                              anchor_x="center", font_name='Verdana')
         else:
-            # draw garbage can icon
             self.remove_list: arcade.SpriteList = arcade.SpriteList()
             # draw list name
             for x in range(len(passwordlistname)):
