@@ -36,6 +36,10 @@ class MainView(arcade.View):
         arcade.draw_text("edit", 300, 396, arcade.color.BRIGHT_NAVY_BLUE, 14, font_name='Verdana Bold')
         arcade.draw_text("View Passwords", 30, 375, arcade.color. BLACK, 12, font_name='Verdana Bold')
 
+        arcade.draw_text("Food (1)", 30, 325, arcade.color.ORANGE, 16, font_name='Verdana Bold')
+        arcade.draw_text("edit", 300, 321, arcade.color.BRIGHT_NAVY_BLUE, 14, font_name='Verdana Bold')
+        arcade.draw_text("View Passwords", 30, 300, arcade.color. BLACK, 12, font_name='Verdana Bold')
+
 
 class Icon(arcade.Sprite):
     def __init__(self, filename, scale):

@@ -29,8 +29,8 @@ class MainView(arcade.View):
         arcade.draw_text("30 Days Left", 35, 465, arcade.color.BLACK, 22, font_name='Verdana Bold')
 
         arcade.draw_rectangle_filled(width / 2, 420, 350, 70, arcade.color.BLACK)
-        arcade.draw_text("Instagram", 50, 415, arcade.color.WHITE, 22)
-        arcade.draw_text("Username: cd_tech", 50, 395, arcade.color.WHITE, 12)
+        arcade.draw_text("LinkedIn", 50, 415, arcade.color.WHITE, 22)
+        arcade.draw_text("Username: CD Tech", 50, 395, arcade.color.WHITE, 12)
 
         self.icon_list: arcade.SpriteList = arcade.SpriteList()
         remove = Icon("Images/3.png", 0.04)
