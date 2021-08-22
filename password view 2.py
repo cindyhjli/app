@@ -20,9 +20,9 @@ class MainView(arcade.View):
         arcade.draw_text("Username", 30, 570, arcade.color.BRIGHT_NAVY_BLUE, 18, font_name='Verdana Bold')
         arcade.draw_text("@cd_tech", 30, 540, arcade.color.BLACK, 18)
         arcade.draw_text("Password", 30, 480, arcade.color.BRIGHT_NAVY_BLUE, 18, font_name='Verdana Bold')
-        arcade.draw_text("••••••••••", 30, 450, arcade.color.BLACK, 25)
+        arcade.draw_text("wo14g31IU", 30, 450, arcade.color.BLACK, 18)
         self.icon_list: arcade.SpriteList = arcade.SpriteList()
-        add = Icon("Images/8.png", 0.04)
+        add = Icon("Images/7.png", 0.04)
         add.position = 180, 493
         self.icon_list.append(add)
         self.icon_list.draw()
