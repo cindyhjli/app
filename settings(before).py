@@ -29,7 +29,7 @@ class MainView(arcade.View):
         arcade.draw_text("Passwords", 30, 425, arcade.color.BLACK, 16, font_name='Verdana Bold')
 
         self.on_off_list: arcade.SpriteList = arcade.SpriteList()
-        on = Icon("Images/5.png", 0.07)
+        on = Icon("Images/6.png", 0.07)
         on.position = 340, 460
         self.on_off_list.append(on)
         self.on_off_list.draw()
