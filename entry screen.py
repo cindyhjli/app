@@ -43,7 +43,7 @@ class EntryScreen(arcade.View):
         arcade.draw_text("URL:", start_x=20, start_y=500, color=arcade.color.WHITE, font_size=20)
         arcade.draw_text("Username:", start_x=20, start_y=400, color=arcade.color.WHITE, font_size=20)
         arcade.draw_text("Password:", start_x=20, start_y=300, color=arcade.color.WHITE, font_size=20)
-        arcade.draw_text("Entry added!:", start_x=125, start_y=180, color=arcade.color.WHITE, font_size=20)
+        arcade.draw_text("Entry added!", start_x=125, start_y=180, color=arcade.color.WHITE, font_size=20)
 
     def on_show_view(self):
         self.setup()
