@@ -1,11 +1,11 @@
 import arcade
 import globalValues
-
+#window properties
 width = 400
 height = 700
 title = "passwordapp"
 
-
+#main
 class Main(arcade.Window):
 
     def __init__(self):

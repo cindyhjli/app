@@ -31,11 +31,11 @@ class MainView(arcade.View):
 
         self.pile_mat_list: arcade.SpriteList = arcade.SpriteList()
 
-        settings = Icon("Images/2.png", 0.04)
+        settings = Icon("../Images/2.png", 0.04)
         settings.position = 35, 657
         self.pile_mat_list.append(settings)
 
-        add = Icon("Images/1.png", 0.04)
+        add = Icon("../Images/1.png", 0.04)
         add.position = 365, 658
         self.pile_mat_list.append(add)
 
@@ -51,7 +51,7 @@ class MainView(arcade.View):
             self.remove_list: arcade.SpriteList = arcade.SpriteList()
             for x in range(len(passwordlistname)):
                 arcade.draw_rectangle_filled(width / 2, 575 - (80*x), 350, 70, arcade.color.BLACK)
-                remove = Icon("Images/3.png", 0.04)
+                remove = Icon("../Images/3.png", 0.04)
                 remove.position = 340, 575 - (80*x)
                 self.remove_list.append(remove)
                 button = MyFlatButton(passwordlistname[x], center_x=165, center_y=585-(80*x), width=280, height=35)
