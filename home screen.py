@@ -33,13 +33,13 @@ class MainView(arcade.View):
 
         self.pile_mat_list: arcade.SpriteList = arcade.SpriteList()
 
-        add = Icon("Images/2.png", 0.04)
-        add.position = 35, 657
-        self.pile_mat_list.append(add)
-
-        settings = Icon("Images/1.png", 0.04)
-        settings.position = 365, 658
+        settings = Icon("Images/2.png", 0.04)
+        settings.position = 35, 657
         self.pile_mat_list.append(settings)
+
+        add = Icon("Images/1.png", 0.04)
+        add.position = 365, 658
+        self.pile_mat_list.append(add)
 
         self.pile_mat_list.draw()
 
